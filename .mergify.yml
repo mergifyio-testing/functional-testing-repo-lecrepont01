@@ -1,0 +1,16 @@
+pull_request_rules:
+- actions:
+    queue: {}
+  conditions:
+  - label=queue
+  name: Queue
+queue_rules:
+- name: pending-check-success
+  routing_conditions:
+  - check-success=some-pending-check-in-cicheck-success=some-pending-check-in-ci-2check-success=some-pending-check-in-ci-3
+- name: pending-check-success-2
+  routing_conditions:
+  - check-success=some-pending-check-in-ci-2check-success=some-pending-check-in-ci-4
+- name: default
+  routing_conditions:
+  - label=will-not-be-set

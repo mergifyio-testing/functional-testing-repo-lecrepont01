@@ -1,0 +1,19 @@
+pull_request_rules:
+- actions:
+    queue: {}
+  conditions:
+  - label=queue
+  name: Queue
+queue_rules:
+- merge_conditions:
+  - 'schedule: Mon-Fri 09:00-17:30[Europe/Paris]'
+  - check-success=some-pending-check-in-ci
+  name: hotfix
+  routing_conditions:
+  - label=hotfix
+  - check-success=some-pending-check-in-ci
+  - '#review-threads-unresolved=0'
+  - '#review-requested=0'
+- name: will_not_go
+  routing_conditions:
+  - label=never-set

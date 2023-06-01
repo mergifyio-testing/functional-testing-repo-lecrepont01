@@ -1,0 +1,15 @@
+pull_request_rules:
+- actions:
+    queue: {}
+  conditions:
+  - label=queue
+  name: Queue
+queue_rules:
+- merge_conditions:
+  - 'schedule: Mon-Fri 20:00-21:30[Europe/Paris]'
+  name: hotfix
+  routing_conditions:
+  - label=hotfix
+- conditions:
+  - status-success=continuous-integration/fake-ci
+  name: default

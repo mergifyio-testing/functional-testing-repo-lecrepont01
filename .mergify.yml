@@ -1,0 +1,8 @@
+pull_request_rules:
+- actions:
+    assign:
+      users:
+      - mergify-test1
+  conditions:
+  - base=20230616075903/test_eventlogs_in_db/main
+  name: assign

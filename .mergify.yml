@@ -1,0 +1,22 @@
+pull_request_rules:
+- actions:
+    queue: {}
+  conditions:
+  - label=queue
+  name: Queue
+- actions:
+    rebase:
+      bot_account: mergify-test4
+  conditions:
+  - base=20230620124908/test_pr_dequeued_after_routing_conditions_reevaluation/main
+  name: rebase
+queue_rules:
+- name: hotfix
+  routing_conditions:
+  - label=hotfix
+- name: pending-check-success
+  routing_conditions:
+  - check-success=check
+- name: default
+  routing_conditions:
+  - label=will-not-be-set

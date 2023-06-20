@@ -1,0 +1,21 @@
+pull_request_rules:
+- actions:
+    queue: {}
+  conditions:
+  - label=queue
+  name: Queue
+- actions:
+    rebase: {}
+  conditions:
+  - base=20230620121357/test_pr_unqueued_after_routing_conditions_reevaluation/main
+  name: rebase
+queue_rules:
+- name: hotfix
+  routing_conditions:
+  - label=hotfix
+- name: pending-check-success
+  routing_conditions:
+  - check-success=check
+- name: default
+  routing_conditions:
+  - label=will-not-be-set

@@ -1,0 +1,15 @@
+pull_request_rules:
+- actions:
+    queue: {}
+  conditions:
+  - label=queue
+  name: Queue
+queue_rules:
+- merge_conditions:
+  - label=merge
+  name: pending-check-success
+  routing_conditions:
+  - check-success=check
+- name: default
+  routing_conditions:
+  - label=will-not-be-set

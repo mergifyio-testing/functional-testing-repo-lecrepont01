@@ -1,0 +1,17 @@
+jobs:
+  unit-tests:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Test dispatched workflow inputs
+      run: echo input1=${{ inputs.input1 }}, input2=${{ inputs.input2 }}
+    timeout-minutes: 5
+name: continuous_integration
+onCDF:
+  workflow_dispatch:
+    inputs:
+      input1:
+        required: true
+        type: string
+      input2:
+        required: false
+        type: number

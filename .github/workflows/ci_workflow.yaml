@@ -1,0 +1,20 @@
+jobs:
+  test-dispatch:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Test dispatched workflow inputs
+      run: echo some_string=${{ inputs.some_string }}, some_number=${{ inputs.some_number
+        }}
+    timeout-minutes: 5
+name: continuous_integration
+'on':
+  pull_request:
+    branches: 20230810123219/test_gha_success/main
+  workflow_dispatch:
+    inputs:
+      some_number:
+        required: true
+        type: number
+      some_string:
+        required: true
+        type: string

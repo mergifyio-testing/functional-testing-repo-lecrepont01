@@ -1,0 +1,16 @@
+jobs:
+  test-dispatch:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Test dispatched workflow inputs
+      run: echo some_boolean=${{ inputs.some_boolean }}
+    timeout-minutes: 5
+name: pep8
+'on':
+  pull_request:
+    branches: 20230810115626/test_gha_success/main
+  workflow_dispatch:
+    inputs:
+      some_boolean:
+        required: true
+        type: boolean

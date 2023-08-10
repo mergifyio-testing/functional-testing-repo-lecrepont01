@@ -1,0 +1,15 @@
+pull_request_rules:
+- actions:
+    github_actions:
+      workflow:
+        dispatch:
+        - inputs:
+            some_boolean: true
+          workflow: pep8
+        - inputs:
+            some_number: '11'
+            some_string: Hello
+          workflow: continuous_integration
+  conditions:
+  - label=dispatch
+  name: Dispatch GHA

@@ -1,0 +1,12 @@
+pull_request_rules:
+- actions:
+    github_actions:
+      workflow:
+        dispatch:
+        - inputs:
+            some_number: 11
+            some_string: Hello
+          workflow: continuous_integration
+  conditions:
+  - label=dispatch
+  name: Dispatch a GHA action

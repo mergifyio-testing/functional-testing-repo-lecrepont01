@@ -1,0 +1,13 @@
+jobs:
+  test-dispatch:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Test dispatched workflow inputs
+      run: echo tintin&milou
+    timeout-minutes: 5
+name: multiple_workflows_success
+'on':
+  pull_request:
+    branches: 20230811124122/test_gha_multiple_workflows_dispatches_containing_error/main
+  workflow_dispatch:
+    inputs: {}

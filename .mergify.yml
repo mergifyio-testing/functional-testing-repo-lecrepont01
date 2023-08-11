@@ -1,0 +1,6 @@
+queue_rules:
+- checks_timeout: 10 m
+  name: default
+  queue_conditions:
+  - label=default
+  - check-success=pending_check

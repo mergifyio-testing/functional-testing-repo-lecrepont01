@@ -1,0 +1,7 @@
+queue_rules:
+- checks_timeout: 10 m
+  merge_conditions:
+  - check-success=pending_check
+  name: default
+  queue_conditions:
+  - label=default

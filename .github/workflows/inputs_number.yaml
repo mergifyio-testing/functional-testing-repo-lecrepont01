@@ -1,0 +1,15 @@
+jobs:
+  test-dispatch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Workflow input number fails
+      run: echo yolo
+name: inputs_number
+'on':
+  pull_request:
+    branches: 20230814082651/test_gha_input_type_number_is_failing/main
+  workflow_dispatch:
+    inputs:
+      some_number:
+        required: true
+        type: number

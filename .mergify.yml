@@ -1,0 +1,9 @@
+pull_request_rules:
+- actions:
+    github_actions:
+      workflow:
+        dispatch:
+        - workflow: workflow_run_forbidden
+  conditions:
+  - label=dispatch
+  name: Dispatch GHA

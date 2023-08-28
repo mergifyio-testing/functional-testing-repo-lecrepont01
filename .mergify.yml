@@ -1,0 +1,16 @@
+pull_request_rules:
+- actions:
+    merge:
+      method: merge
+  conditions:
+  - base=20230828141527/test_backport_invalid_branch_name/main
+  - label=backport
+  name: Merge on main
+- actions:
+    backport:
+      branches:
+      - 20230828141527/test_backport_invalid_branch_name/branch-13.3.x
+  conditions:
+  - base=20230828141527/test_backport_invalid_branch_name/main
+  - label=backport
+  name: Backport

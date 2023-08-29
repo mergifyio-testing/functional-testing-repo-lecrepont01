@@ -1,0 +1,10 @@
+pull_request_rules:
+- actions:
+    label:
+      add:
+      - yolo
+      remove: []
+  conditions:
+  - base=20230829081952/test_label_condition_dequeue/main
+  - queue-dequeue-reason=PR_MERGED
+  name: rename label

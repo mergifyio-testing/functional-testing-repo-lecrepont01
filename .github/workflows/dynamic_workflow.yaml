@@ -1,0 +1,13 @@
+jobs:
+  test-dispatch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Show author
+      run: echo author=${{ inputs.author }}
+name: dynamic_workflow
+'on':
+  workflow_dispatch:
+    inputs:
+      author:
+        required: true
+        type: string

@@ -1,0 +1,7 @@
+pull_request_rules:
+- actions:
+    comment:
+      message: head-repo-full-name={{ head_repo_full_name }}
+  conditions:
+  - head-repo-full-name=mergifyio-testing/functional-testing-repo-lecrepont01/20231026092314/test_head_repo_full_name/integration/pr1
+  name: no-draft

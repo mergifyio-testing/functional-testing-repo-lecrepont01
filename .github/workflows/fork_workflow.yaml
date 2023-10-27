@@ -1,0 +1,12 @@
+jobs:
+  test-dispatch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello world
+      run: echo hello world
+name: workflow_on_fork
+'on':
+  pull_request:
+    branches: 20231027122843/test_gha_on_fork/main
+  workflow_dispatch:
+    inputs: {}

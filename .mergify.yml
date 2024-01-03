@@ -1,0 +1,10 @@
+pull_request_rules:
+- actions:
+    queue: {}
+  conditions:
+  - base=20240103142639/test_queue_change_event_emitted/main
+  name: Queue
+queue_rules:
+- merge_conditions:
+  - status-success=continuous-integration/fake-ci
+  name: default
